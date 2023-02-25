@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif, "Helvetica Neue", "Helvetica", "Arial",
+    "Lucida Grande";
+}
+.title {
+  font-size: 3rem;
+  text-align: center;
+  margin: 1rem 0.5rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.allTodo_title {
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem 0.5rem;
+  font-weight: bold;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+input.form-control,
+textarea.form-control {
+  background: grey;
+  color: white;
+  border: 1px solid black;
+}
+.form {
+  box-shadow: rgba(255, 0, 0, 0.2) 0px 8px 24px;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;  */
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+.allTodos {
+  margin: 4rem 0;
+}
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1rem auto;
+  box-shadow: rgba(255, 0, 0, 0.2) 0px 3px 5px;
+  width: 60%;
+}
+.todo .img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.todo .img .name a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.4s ease-in-out;
+}
+.todo .img .name a:hover {
+  text-decoration: underline;
+  font-weight: bolder;
+}
+.todo img {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  background: white;
+  background-size: contain;
+  margin-right: 2rem;
+}
+
+.notes {
+  width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.notes {
+  width: 300px;
+  margin: 0 5px;
+}
+.mark {
+  background-color: transparent !important;
+  padding: 3px;
+}
+.mark i {
+  font-size: 20px;
+  color: White;
+  background: transparent;
+  cursor: pointer;
+}
