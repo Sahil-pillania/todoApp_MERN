@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
+import Todo from "./Todo";
 import "./App.css";
 
 function App() {
-  return <div className="App">Hello everyone!</div>;
+  return <Todo />;
 }
 
 export default App;
