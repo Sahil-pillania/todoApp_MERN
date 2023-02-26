@@ -17,13 +17,31 @@ const Todo = () => {
     setData({ ...data, [name]: value });
   };
   // submitting the data into database
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
+    e.preventDefault();
     console.log(data);
-    setData({
-      title: "",
-      website: "",
-      imagelink: "",
+    const response = await fetch(`http://localhost:5000/save`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token"),
+      },
+      body: JSON.stringify(data),
     });
+
+    if (response.status === 201) {
+      alert("Note has been added successfully!");
+
+      setData({
+        title: "",
+        website: "",
+        imagelink: "",
+        note: "",
+      });
+    } else {
+      alert("Check your credentials and try again!");
+    }
+    //console.log("Your note has been added. " + response.json);
   };
 
   return (
@@ -122,7 +140,8 @@ const Todo = () => {
             <div className="notes">
               <div className="note">This is note this is the note</div>
               <div className="mark">
-                <i className="fas fa-solid fa-check"></i>
+                <i className="fas fa-solid fa-check mx-2"></i>
+                <i class="fa-solid fa-trash mx-2"></i>
               </div>
             </div>
           </div>
