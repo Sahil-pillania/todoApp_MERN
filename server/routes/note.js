@@ -15,7 +15,6 @@ app.use(bodyParser.json());
 // define the note save page route
 router.post("/save", async (req, res) => {
   const { title, website, imagelink, note, done } = req.body;
-  console.log(done);
 
   if (!title || !website || !imagelink || !note) {
     return res
