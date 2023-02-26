@@ -6,8 +6,25 @@ const Todo = () => {
     title: "",
     website: "",
     imagelink: "",
-    done: "",
+    note: "",
+    done: false,
   });
+
+  const onChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    setData({ ...data, [name]: value });
+  };
+
+  const onSubmit = (e) => {
+    console.log(data);
+    setData({
+      title: "",
+      website: "",
+      imagelink: "",
+    });
+  };
 
   return (
     <>
@@ -23,6 +40,9 @@ const Todo = () => {
             type="text"
             className="form-control"
             placeholder=""
+            name="title"
+            value={data.title}
+            onChange={onChange}
             aria-label="Username"
             aria-describedby="basic-addon1"
           />
@@ -38,6 +58,9 @@ const Todo = () => {
             </span>
             <input
               type="text"
+              name="website"
+              value={data.website}
+              onChange={onChange}
               className="form-control"
               id="basic-url"
               aria-describedby="basic-addon3"
@@ -56,6 +79,9 @@ const Todo = () => {
             <input
               type="text"
               className="form-control"
+              name="imagelink"
+              value={data.imagelink}
+              onChange={onChange}
               id="basic-url"
               aria-describedby="basic-addon3"
             />
@@ -67,9 +93,17 @@ const Todo = () => {
           <textarea
             className="form-control"
             aria-label="With textarea"
+            name="note"
+            value={data.note}
+            onChange={onChange}
           ></textarea>
         </div>
         {/* -----------------form */}
+        <div className="button-box">
+          <button className="submit-button" onClick={onSubmit}>
+            Save
+          </button>
+        </div>
       </div>
       <div className="allTodos">
         <div className="allTodo_title">All Todos</div>

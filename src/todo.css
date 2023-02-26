@@ -34,6 +34,22 @@ textarea.form-control {
   padding: 2rem;
   border-radius: 0.5rem;
 }
+.button-box {
+  text-align: center;
+  margin: 2rem 0;
+}
+.submit-button {
+  padding: 10px 42px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  transition: all 0.4s linear;
+  background: #fff;
+}
+.submit-button:hover {
+  padding: 10px 52px;
+  background: #54ff20;
+  color: white;
+}
 .allTodos {
   margin: 4rem 0;
 }
@@ -44,6 +60,11 @@ textarea.form-control {
   margin: 1rem auto;
   box-shadow: rgba(255, 0, 0, 0.2) 0px 3px 5px;
   width: 60%;
+  transition: transform 0.2s ease-in-out;
+  padding: 4px;
+}
+.todo:hover {
+  transform: scale(1.02);
 }
 .todo .img {
   display: flex;
