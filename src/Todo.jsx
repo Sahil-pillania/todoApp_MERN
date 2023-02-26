@@ -9,14 +9,14 @@ const Todo = () => {
     note: "",
     done: false,
   });
-
+  // change event
   const onChange = (e) => {
     let name = e.target.name;
     let value = e.target.value;
 
     setData({ ...data, [name]: value });
   };
-
+  // submitting the data into database
   const onSubmit = (e) => {
     console.log(data);
     setData({
